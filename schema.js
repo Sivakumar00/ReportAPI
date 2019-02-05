@@ -1,29 +1,29 @@
 const mongoose = require('mongoose');
-const schema  = mongoose.Schema;
+const Schema  = mongoose.Schema;
 
-var resultSchema =  new schema(
+var resultSchema =  new Schema(
    
   {
     hostName: {type : String, required:true},
-    suiteId: String,
-    OS: String,
-    suiteStatus: String,
+    suiteId: {type:String},
+    OS:  {type:String},
+    suiteStatus:  {type:String},
     testCases: [
       {
-        testCaseStatus: String,
-        testCaseStart: String,
-        testCaseEnd: String,
-        testCaseMessage:String,
-        testCaseID: String
+        testCaseStatus:  {type:String},
+        testCaseStart:  {type:String},
+        testCaseEnd:  {type:String},
+        testCaseMessage: {type:String},
+        testCaseID:  {type:String}
       }
     ],
-    suiteStartTime:String,
-    suiteEndTime: String,
-    hostAddress: String,
-    version: String
-  }
+    suiteStartTime: {type:String},
+    suiteEndTime:  {type:String},
+    hostAddress:  {type:String},
+    version:  {type:String}
+  },{collection : 'test_report'}
 );
 
-  var result = mongoose.model('result',resultSchema);
 
-  module.exports = result;
+
+  module.exports = mongoose.model('result',resultSchema);
