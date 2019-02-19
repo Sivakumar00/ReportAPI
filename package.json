@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "current-date": "^0.1.1",
+    "date-and-time": "^0.6.3",
     "express": "^4.16.4",
+    "moment": "^2.24.0",
     "mongoose": "^5.4.9"
   }
 }
